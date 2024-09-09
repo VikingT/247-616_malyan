@@ -17,6 +17,7 @@
 
 //Definitions privees
 #define PILOTESERIEUSB_TTY "/dev/ttyACM0"
+#define _GNU_SOURCE
 
 //#define PILOTESERIEUSB_TTY "/dev/ttyUSB0"
 
@@ -93,7 +94,7 @@ int piloteSerieUSB_initialise(void)
   piloteSerieUSB_configuration.c_cflag &= ~PARENB; //pas de parite 
   piloteSerieUSB_configuration.c_cflag |= CS8; // 8 bits
   
-  piloteSerieUSB_configuration.c_cflag &= ~CRTSCTS;  //pas de traitement local en sortie  
+  //piloteSerieUSB_configuration.c_cflag &= ~CRTSCTS;  //pas de traitement local en sortie  
   
 
   //configuration des lectures si en mode "raw"

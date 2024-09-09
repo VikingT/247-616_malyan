@@ -67,6 +67,9 @@ int nombre;
   fprintf(stdout, "Q\": pour terminer.\n\r");
   fprintf(stdout, "6\": pour démarrer le ventilateur.\n\r");
   fprintf(stdout, "7\": pour arrêter le ventilateur.\n\r");  
+  fprintf(stdout, "8 : donne la position actuelle.\n\r");
+  fprintf(stdout, "P : va à la position x=20, y=20, z=20.\n\r");
+  fprintf(stdout, "H : positionne la tête d'impression à l'origine (home).\n\r");
   fprintf(stdout, "autre chose pour générer une erreur.\n\r");
   fflush(stdout);
   
@@ -88,6 +91,18 @@ int nombre;
         {
           erreur = 1;
         }
+        break;
+
+      case '8':
+      interfaceMalyan_donneLaPosition();
+      break;
+      
+      case 'P':
+      interfaceMalyan_donneLaPosition();
+      break;
+
+      case 'H':
+      interfaceMalyan_vaALaPosition(1,1,1);
       break;
       default:
         if (interfaceMalyan_genereUneErreur() < 0)
