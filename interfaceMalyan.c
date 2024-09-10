@@ -69,13 +69,13 @@ int interfaceMalyan_genereUneErreur(void)
 
 int interfaceMalyan_donneLaPosition(void)
 {
-  return interfaceMalyan_ecritUneCommande("M105\n", 5);
+  return interfaceMalyan_ecritUneCommande("M114\n", 5);
 }
 int interfaceMalyan_vaALaPosition(int x, int y, int z)
 {
-  return interfaceMalyan_ecritUneCommande("G1 X20 Y20 Z20\n", 5);
+  return interfaceMalyan_ecritUneCommande("G1 X20 Y20 Z20 F500\n", 20);
 }
 int interfaceMalyan_retourneALaMaison(void)
 {
-return interfaceMalyan_ecritUneCommande("G28\n", 5);
+return interfaceMalyan_ecritUneCommande("G28\n", 4);
 }
